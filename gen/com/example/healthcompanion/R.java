@@ -49,6 +49,7 @@ public final class R {
         public static final int bp_hint_up=0x7f050006;
         public static final int hello_world=0x7f050001;
         public static final int hint_weight=0x7f050005;
+        public static final int sugar_hint=0x7f050008;
         public static final int temp_val=0x7f050004;
         public static final int title_activity_form_data=0x7f050003;
     }

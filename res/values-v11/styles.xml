@@ -7,9 +7,10 @@
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!-- API 11 theme customizations can go here. -->
     </style>
-    <string name="temp_val">Temperature</string>
+    <string name="temp_val">Body Temperature</string>
     <string name="hint_weight">Weight (in lbs)</string>
     <string name="bp_hint_up">Blood Pressure (Upper Value)</string>
     <string name="bp_hint_lower">Blood Pressure (Lower Value)</string>
+    <string name="sugar_hint">Sugar Level</string>
 
 </resources>
