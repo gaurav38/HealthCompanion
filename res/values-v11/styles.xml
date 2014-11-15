@@ -12,5 +12,6 @@
     <string name="bp_hint_up">Blood Pressure (Upper Value)</string>
     <string name="bp_hint_lower">Blood Pressure (Lower Value)</string>
     <string name="sugar_hint">Sugar Level</string>
+    <string name="txt_btn">Submit</string>
 
 </resources>

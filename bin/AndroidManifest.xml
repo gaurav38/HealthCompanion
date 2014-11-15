@@ -28,6 +28,10 @@
             android:name=".Form_data"
             android:label="@string/title_activity_form_data" >
         </activity>
+        <activity
+            android:name=".Form_data_heart"
+            android:label="@string/title_activity_form_data_heart" >
+        </activity>
     </application>
 
 </manifest>
