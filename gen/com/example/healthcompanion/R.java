@@ -50,8 +50,10 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int bp_hint_lower=0x7f050008;
         public static final int bp_hint_up=0x7f050007;
+        public static final int chl_hint=0x7f05000c;
         public static final int hello_world=0x7f050001;
         public static final int hint_weight=0x7f050006;
+        public static final int plserate_hint=0x7f05000b;
         public static final int sugar_hint=0x7f050009;
         public static final int temp_val=0x7f050005;
         public static final int title_activity_form_data=0x7f050003;

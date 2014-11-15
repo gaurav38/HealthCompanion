@@ -13,5 +13,7 @@
     <string name="bp_hint_lower">Blood Pressure (Lower Value)</string>
     <string name="sugar_hint">Sugar Level</string>
     <string name="txt_btn">Submit</string>
+    <string name="plserate_hint">Heart Rate</string>
+    <string name="chl_hint">Cholestrol</string>
 
 </resources>
