@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
+
 public class HomeActivity extends Activity {
 
 	Button myButton, logoutButton;
@@ -43,6 +44,7 @@ public class HomeActivity extends Activity {
         
         //Settign up Firebase
         Firebase.setAndroidContext(this);
+
         
         // Button click send data to firebase
         final Firebase healthcompFB = new Firebase("https://healthcompanion.firebaseio.com/");
@@ -72,6 +74,7 @@ public class HomeActivity extends Activity {
 			}
  
 		});
+
         
     }
     
@@ -96,4 +99,7 @@ public class HomeActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }

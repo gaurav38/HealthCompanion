@@ -7,5 +7,15 @@
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!-- API 11 theme customizations can go here. -->
     </style>
+    <string name="temp_val">Body Temperature</string>
+    <string name="hint_weight">Weight (in lbs)</string>
+    <string name="bp_hint_up">Blood Pressure (Upper Value)</string>
+    <string name="bp_hint_lower">Blood Pressure (Lower Value)</string>
+    <string name="sugar_hint">Sugar Level</string>
+    <string name="txt_btn">Submit</string>
+    <string name="plserate_hint">Heart Rate</string>
+    <string name="chl_hint">Cholestrol</string>
+    <string name="resp_hint">Respiratory Rate</string>
+    <string name="title_gen">General</string>
 
 </resources>
