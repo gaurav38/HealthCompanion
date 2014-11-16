@@ -25,7 +25,7 @@ import android.widget.Toast;
 public class LoginActivity extends Activity {
 	
 	EditText emailText, passwordText;
-	Button submit, forgotPassword;
+	Button submit, forgotPassword, signUp;
 	Firebase healthcompFB;
 	String email,password;
 
@@ -39,13 +39,22 @@ public class LoginActivity extends Activity {
 		passwordText = (EditText) findViewById(R.id.passwordText);
 		submit = (Button) findViewById(R.id.submitButton);
 		forgotPassword = (Button) findViewById(R.id.forgotButton);
-		
+		signUp = (Button) findViewById(R.id.signUpButton);
 		// Setting up FireBase
 		Firebase.setAndroidContext(this);
 		
 		// Initializing FireBase
         healthcompFB = new Firebase("https://healthcompanion.firebaseio.com");
 		
+        // Sign Up Listener
+        signUp.setOnClickListener(new OnClickListener() {
+        	@Override
+			public void onClick(View arg0) {
+        		Intent registration = new Intent(LoginActivity.this, RegistrationActivity.class);
+        		startActivity(registration);
+        		finish();
+        	}
+        });
 		// Button click listener
         submit.setOnClickListener(new OnClickListener() {
         

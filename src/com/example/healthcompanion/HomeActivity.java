@@ -18,7 +18,7 @@ import android.widget.EditText;
 
 public class HomeActivity extends Activity {
 
-	Button myButton;
+	Button myButton, logoutButton;
 	EditText myEditText;
 	
     @Override
@@ -28,7 +28,7 @@ public class HomeActivity extends Activity {
         
         // Check if user is logged in
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        Editor editor = pref.edit();
+        final Editor editor = pref.edit();
         String loggedinEmail = pref.getString("username", null);
         if(loggedinEmail == null){
         	Intent goToLogin = new Intent(HomeActivity.this, LoginActivity.class);
@@ -38,6 +38,7 @@ public class HomeActivity extends Activity {
         
         //Setting up the environment
         myButton = (Button) findViewById(R.id.button1);
+        logoutButton = (Button) findViewById(R.id.logoutButton);
         myEditText = (EditText) findViewById(R.id.editText1);
         
         //Settign up Firebase
@@ -53,6 +54,21 @@ public class HomeActivity extends Activity {
 			public void onClick(View arg0) {
 				healthcompFB.child("data").push().setValue(myEditText.getText().toString());
 				myEditText.setText("");
+			}
+ 
+		});
+        
+        // Button click listener
+        logoutButton.setOnClickListener(new OnClickListener() {
+        	 
+			@Override
+			public void onClick(View view) {
+				editor.clear();
+				editor.commit();
+				Intent goToLogin = new Intent(HomeActivity.this, LoginActivity.class);
+				startActivity(goToLogin);
+				finish();
+				
 			}
  
 		});

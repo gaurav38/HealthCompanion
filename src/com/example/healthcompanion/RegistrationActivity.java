@@ -1,5 +1,8 @@
 package com.example.healthcompanion;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -31,6 +34,7 @@ public class RegistrationActivity extends Activity {
 	RadioButton radioButtonSex;
 	String email,password,name,sex;
 	int age;
+	int selectedRadio;
 	Firebase healthcompFB;
 
 	@Override
@@ -63,6 +67,10 @@ public class RegistrationActivity extends Activity {
 			public void onClick(View arg0) {
 				email = emailText.getText().toString();
 				password = passwordText.getText().toString();
+				selectedRadio = radioSex.getCheckedRadioButtonId();
+				radioButtonSex = (RadioButton) findViewById(selectedRadio);
+				sex = radioButtonSex.getText().toString();
+				age = Integer.parseInt(ageText.getText().toString());
 				//Toast.makeText(getApplicationContext(), email+" "+password, Toast.LENGTH_LONG);
 				CreateUser cu = new CreateUser();
 				cu.execute();
@@ -93,6 +101,17 @@ public class RegistrationActivity extends Activity {
 			    	    @Override
 			    	    public void onAuthenticated(AuthData authData) {
 			    	        Log.d("UserAutoLogin","User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
+			    	        Map<String, String> map = new HashMap<String, String>();
+			    	        map.put("provider", authData.getProvider());
+			    	        if(authData.getProviderData().containsKey("id")) {
+			    	            map.put("provider_id", authData.getProviderData().get("id").toString());
+			    	        }
+			    	        if(authData.getProviderData().containsKey("displayName")) {
+			    	            map.put("displayName", authData.getProviderData().get("displayName").toString());
+			    	        }
+			    	        healthcompFB.child("users").child(authData.getUid()).setValue(map);
+			    	        healthcompFB.child("users").child(authData.getUid()).child("Gender").setValue(sex);
+			    	        healthcompFB.child("users").child(authData.getUid()).child("age").setValue(age);
 			    	    }
 			    	    @Override
 			    	    public void onAuthenticationError(FirebaseError firebaseError) {
