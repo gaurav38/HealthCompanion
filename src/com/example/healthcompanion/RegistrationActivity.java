@@ -92,14 +92,15 @@ public class RegistrationActivity extends Activity {
 			    	Toast.makeText(getApplicationContext(), "Registration Successfull!", Toast.LENGTH_LONG).show();
 			        
 			    	SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-			    	Editor editor = pref.edit();
+			    	final Editor editor = pref.edit();
 			    	editor.putString("username", email);
-			    	editor.commit();
+			    	
 			    	
 			    	// Logging user in on FireBase
 			    	healthcompFB.authWithPassword(email, password, new Firebase.AuthResultHandler() {
 			    	    @Override
 			    	    public void onAuthenticated(AuthData authData) {
+			    	    	try{
 			    	        Log.d("UserAutoLogin","User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
 			    	        Map<String, String> map = new HashMap<String, String>();
 			    	        map.put("provider", authData.getProvider());
@@ -112,16 +113,29 @@ public class RegistrationActivity extends Activity {
 			    	        healthcompFB.child("users").child(authData.getUid()).setValue(map);
 			    	        healthcompFB.child("users").child(authData.getUid()).child("Gender").setValue(sex);
 			    	        healthcompFB.child("users").child(authData.getUid()).child("age").setValue(age);
+			    	        
+			    	        //Setting up uid in shared preferences
+			    	        editor.putString("uid", authData.getUid());
+			    	        editor.commit();
+			    	    	}
+			    	    	catch(Exception e)
+			    	    	{
+			    	    		Log.d("Exception",e.getMessage());
+			    	    	}
 			    	    }
 			    	    @Override
 			    	    public void onAuthenticationError(FirebaseError firebaseError) {
 			    	        Log.d("AutoLoginError",firebaseError.getDetails());
 			    	    }
 			    	});
+			    	Map<String, ?> allEntries = pref.getAll();
+			    	for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+			    	    Log.d("map values", entry.getKey() + ": " + entry.getValue().toString());
+			    	} 
 			    	
-			    	// Navigating to home activity
-			    	Intent goToHome = new Intent(RegistrationActivity.this,HomeActivity.class);
-			    	startActivity(goToHome);
+			    	// Navigating to User Profile activity
+			    	Intent goToProfile = new Intent(RegistrationActivity.this,UserProfileActivity.class);
+			    	startActivity(goToProfile);
 			    	finish();
 			    }
 
@@ -137,7 +151,7 @@ public class RegistrationActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(String result) {
-			Toast.makeText(getApplicationContext(), "Registration Successfull!", Toast.LENGTH_LONG).show();
+			//Toast.makeText(getApplicationContext(), "Registration Successfull!", Toast.LENGTH_LONG).show();
 		}
 		
 		
