@@ -25,22 +25,13 @@
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="7dp"
         android:layout_marginTop="40dp"
         android:src="@drawable/ic_action" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageButton1"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="10dp"
-        android:layout_toLeftOf="@+id/logoutButton" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -77,5 +68,21 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/imageButton1"
         android:text="Symptoms" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/imageButton3"
+        android:layout_toLeftOf="@+id/logoutButton"
+        android:src="@drawable/viewRecords" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:layout_below="@+id/imageButton2"
+        android:text="View Records" />
 
 </RelativeLayout>

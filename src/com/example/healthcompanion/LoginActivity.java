@@ -2,9 +2,11 @@ package com.example.healthcompanion;
 
 
 import com.firebase.client.AuthData;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.Firebase.ResultHandler;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,12 +29,17 @@ public class LoginActivity extends Activity {
 	EditText emailText, passwordText;
 	Button submit, forgotPassword, signUp;
 	Firebase healthcompFB;
-	String email,password;
+	String email,password, uid, medicalCondition;
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		
+		SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+		Editor editor = pref.edit();
 		
 		//Setting up UI elements
 		emailText = (EditText) findViewById(R.id.emailText);
@@ -98,14 +105,31 @@ public class LoginActivity extends Activity {
 			    	// Setting user preferences to logged in
 			    	// Preference manager set user log in
 			    	SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-			    	Editor editor = pref.edit();
+			    	final Editor editor = pref.edit();
 			    	editor.putString("username", email);
 			    	editor.commit();
 			    	
 			    	 //Setting up uid in shared preferences
 	    	        editor.putString("uid", authData.getUid());
 	    	        editor.commit();
-			    	
+	    	        uid = authData.getUid();
+	    	        
+	    	        //Retrieve user profile
+	    	        Firebase userProfileRef = new Firebase("https://healthcompanion.firebaseio.com/users/"+uid+"/medicalcondition");
+	    	        userProfileRef.addValueEventListener(new ValueEventListener() {
+	    	            @Override
+	    	            public void onDataChange(DataSnapshot snapshot) {
+	    	                System.out.println(snapshot.getValue());
+	    	                medicalCondition = snapshot.getValue().toString();
+	    	                editor.putString("medicalcondition", medicalCondition);
+	    	                editor.commit();
+	    	                
+	    	            }
+	    	            @Override
+	    	            public void onCancelled(FirebaseError firebaseError) {
+	    	                System.out.println("The read failed: " + firebaseError.getMessage());
+	    	            }
+	    	        });
 			    	//Navigating to home activity
 			    	Intent goHome = new Intent(LoginActivity.this, HomeActivity.class);
 			    	startActivity(goHome);

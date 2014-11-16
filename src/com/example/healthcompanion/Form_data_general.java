@@ -48,15 +48,16 @@ public class Form_data_general extends Activity {
 		final Editor editor = pref.edit();
 		uid = pref.getString("uid", null);
 				
-		sv = (ScrollView) findViewById(R.id.scrollView1);
-		rl = (RelativeLayout) sv.findViewById(R.id.RelativeLayout1);
+		//sv = (ScrollView) findViewById(R.id.scrollView1);
+		//rl = (RelativeLayout) sv.findViewById(R.id.RelativeLayout1);
 		
-		tempText = (EditText) rl.findViewById(R.id.editText2);
-		weightText = (EditText) rl.findViewById(R.id.editText1);
-		bpLowText = (EditText) rl.findViewById(R.id.editText4);
-		bpHighText = (EditText) rl.findViewById(R.id.editText3);
-		heartRateText = (EditText) rl.findViewById(R.id.editText5);
-		respRateText = (EditText) rl.findViewById(R.id.editText6);
+		tempText = (EditText) findViewById(R.id.editText2);
+		weightText = (EditText) findViewById(R.id.editText1);
+		bpLowText = (EditText) findViewById(R.id.editText4);
+		bpHighText = (EditText) findViewById(R.id.editText3);
+		heartRateText = (EditText) findViewById(R.id.editText5);
+		respRateText = (EditText) findViewById(R.id.editText6);
+		submitButton = (Button) findViewById(R.id.button1);
 		
 		healthcompFB = new Firebase("https://healthcompanion.firebaseio.com");
 		
@@ -72,17 +73,17 @@ public class Form_data_general extends Activity {
 	  	 submitButton.setOnClickListener(new OnClickListener() {
 	 		public void onClick(View arg0) {
 	 			Map<String, Float> map = new HashMap<String, Float>();
-	 			if(tempText.getText().toString() != null)
+	 			if(!tempText.getText().toString().matches(""))
 	 				map.put("temp", Float.parseFloat(tempText.getText().toString()));
-	 			if(bpLowText.getText().toString() != null)
+	 			if(!bpLowText.getText().toString().matches(""))
 	 				map.put("bpLow", Float.parseFloat(bpLowText.getText().toString()));
-	 			if(bpHighText.getText().toString() != null)
+	 			if(!bpHighText.getText().toString().matches(""))
 	 				map.put("bpHigh", Float.parseFloat(bpHighText.getText().toString()));
-	 			if(heartRateText.getText().toString() != null)
+	 			if(!heartRateText.getText().toString().matches(""))
 	 				map.put("heartrate", Float.parseFloat(heartRateText.getText().toString()));
-	 			if(weightText.getText().toString() != null)
+	 			if(!weightText.getText().toString().matches(""))
 	 				map.put("weight", Float.parseFloat(weightText.getText().toString()));
-	 			if(respRateText.getText().toString() != null)
+	 			if(!respRateText.getText().toString().matches(""))
 	 				map.put("respirationrate", Float.parseFloat(respRateText.getText().toString()));
 	 			healthcompFB.child("users").child(uid).child(currentDate).setValue(map);
 	 			
@@ -115,13 +116,30 @@ public class Form_data_general extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+		final Editor editor = pref.edit();
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+        if (id == R.id.action_settings) {
+        	Intent goToProfile = new Intent(getApplicationContext(),UserProfileActivity.class);
+        	startActivity(goToProfile);
+        	finish();
+        }
+        if (id == R.id.Home) {
+        	Intent goHome = new Intent(getApplicationContext(),HomeActivity.class);
+        	startActivity(goHome);
+        	finish();
+        }
+        if(id == R.id.Logout){
+        	Intent logout = new Intent(getApplicationContext(),LoginActivity.class);
+        	
+        	editor.clear();
+        	editor.commit();
+        	startActivity(logout);
+        	finish();
+        }
 		return super.onOptionsItemSelected(item);
 	}
 }

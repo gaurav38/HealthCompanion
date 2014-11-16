@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -75,18 +76,19 @@ public class HomeActivity extends Activity {
         
      // Button click listener
         recordObs.setOnClickListener(new OnClickListener() {
-        	 
+        	
 			@Override
 			public void onClick(View view) {
-				if(userCondition == "Heart Problem"){
+				Log.d("UserCondition",userCondition); 
+				if(userCondition.equals("Heart Problem")){
 				Intent recordDataHeart = new Intent(HomeActivity.this, Form_data_heart.class);
 				startActivity(recordDataHeart);
 				}
-				else if(userCondition == "Diabetes"){
+				else if(userCondition.equals("Diabetes")){
 					Intent recordDataDiabetes = new Intent(HomeActivity.this, Form_data_diabetes.class);
 					startActivity(recordDataDiabetes);
 				}
-				else if(userCondition == "Obesity"){
+				else if(userCondition.equals("Obesity")){
 					Intent recordDataObesity = new Intent(HomeActivity.this, Form_data_obesity.class);
 					startActivity(recordDataObesity);
 				}
@@ -115,12 +117,29 @@ public class HomeActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+    	SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+    	final Editor editor = pref.edit();
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            return true;
+        	Intent goToProfile = new Intent(getApplicationContext(),UserProfileActivity.class);
+        	startActivity(goToProfile);
+        	finish();
+        }
+        if (id == R.id.Home) {
+        	Intent goHome = new Intent(getApplicationContext(),HomeActivity.class);
+        	startActivity(goHome);
+        	finish();
+        }
+        if(id == R.id.Logout){
+        	Intent logout = new Intent(getApplicationContext(),LoginActivity.class);
+        	
+        	editor.clear();
+        	editor.commit();
+        	startActivity(logout);
+        	finish();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -48,6 +48,10 @@
             android:name=".Form_data_obesity"
             android:label="@string/title_activity_form_data_obesity" >
         </activity>
+        <activity
+            android:name=".UserProfileActivity"
+            android:label="User Profile Activity" >
+        </activity>
     </application>
 
 </manifest>

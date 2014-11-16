@@ -29,6 +29,8 @@ public class Form_data_obesity extends Activity {
 	Button submitButton;
 	Firebase healthcompFB;
 	String currentDate;
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +63,13 @@ public class Form_data_obesity extends Activity {
       	submitButton.setOnClickListener(new OnClickListener() {
     		public void onClick(View arg0) {
     			Map<String, Float> map = new HashMap<String, Float>();
-    			if(weightText.getText().toString() != null)
+    			if(!weightText.getText().toString().matches(""))
 					map.put("weight", Float.parseFloat(weightText.getText().toString()));
-    			if(bpLowText.getText().toString() != null)
+    			if(!bpLowText.getText().toString() .matches(""))
     				map.put("bpLow", Float.parseFloat(bpLowText.getText().toString()));
-    			if(bpHighText.getText().toString() != null)
+    			if(!bpHighText.getText().toString().matches(""))
     				map.put("bpHigh", Float.parseFloat(bpHighText.getText().toString()));
-    			if(cholestrolText.getText().toString() != null)
+    			if(!cholestrolText.getText().toString().matches(""))
     				map.put("cholestrol", Float.parseFloat(cholestrolText.getText().toString()));
     			healthcompFB.child("users").child(uid).child(currentDate).setValue(map);
     			
@@ -95,13 +97,30 @@ public class Form_data_obesity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+		final Editor editor = pref.edit();
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+        if (id == R.id.action_settings) {
+        	Intent goToProfile = new Intent(getApplicationContext(),UserProfileActivity.class);
+        	startActivity(goToProfile);
+        	finish();
+        }
+        if (id == R.id.Home) {
+        	Intent goHome = new Intent(getApplicationContext(),HomeActivity.class);
+        	startActivity(goHome);
+        	finish();
+        }
+        if(id == R.id.Logout){
+        	Intent logout = new Intent(getApplicationContext(),LoginActivity.class);
+        	
+        	editor.clear();
+        	editor.commit();
+        	startActivity(logout);
+        	finish();
+        }
 		return super.onOptionsItemSelected(item);
 	}
 }
