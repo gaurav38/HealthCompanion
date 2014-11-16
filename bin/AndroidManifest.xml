@@ -18,7 +18,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name" >
-             <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,13 +27,11 @@
         <activity
             android:name=".RegistrationActivity"
             android:label="@string/title_activity_registration" >
-           
         </activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
-        
         <activity
             android:name=".Form_data"
             android:label="@string/title_activity_form_data" >
@@ -46,7 +44,18 @@
             android:name=".Form_data_general"
             android:label="@string/title_activity_form_data_general" >
         </activity>
+        <activity
+            android:name=".Med_Prescrip"
+            android:label="@string/title_activity_med__prescrip" >
+        </activity>
+        <activity
+            android:name=".Upload_images"
+            android:label="@string/title_activity_upload_images" >
+        </activity>
+        <activity
+            android:name=".BrowsePictureActivity"
+            android:label="@string/title_activity_browse_picture" >
+        </activity>
     </application>
 
 </manifest>
-

@@ -25,7 +25,16 @@ public class HomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+      //  setContentView(R.layout.activity_upload_images);
+       // Intent i = new Intent (HomeActivity.this, Upload_images.class);
+        //startActivity(i);
+        //finish();
+       
+       // Intent i = new Intent (HomeActivity.this, BrowsePictureActivity.class);
+       // startActivity(i);
+        //finish();
+       
+        //setContentView(R.layout.activity_home);
         
         // Check if user is logged in
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
@@ -38,7 +47,7 @@ public class HomeActivity extends Activity {
         }
         
         //Setting up the environment
-        myButton = (Button) findViewById(R.id.button1);
+        myButton = (Button) findViewById(R.id.upld_btn);
         logoutButton = (Button) findViewById(R.id.logoutButton);
         myEditText = (EditText) findViewById(R.id.editText1);
         
