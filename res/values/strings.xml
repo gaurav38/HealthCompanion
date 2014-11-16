@@ -11,12 +11,11 @@
     <string name="title_activity_form_data">Form_data</string>
     <string name="title_activity_form_data_heart">Form_data_heart</string>
     <string name="title_activity_form_data_general">Form_data_general</string>
-
     <string name="title_activity_med__prescrip">Med_Prescrip</string>
     <string name="title_activity_upload_images">Upload_images</string>
     <string name="title_activity_browse_picture">BrowsePictureActivity</string>
-
     <string name="title_activity_form_data_obesity">Form_data_obesity</string>
-
+    <string name="title_activity_view_records">ViewRecordsActivity</string>
+    <string name="title_activity_view__single__record">View_Single_Record</string>
 
 </resources>

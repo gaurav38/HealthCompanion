@@ -22,23 +22,14 @@ import android.widget.ImageButton;
 public class HomeActivity extends Activity {
 
 	Button logoutButton;
-	ImageButton recordObs;
+	ImageButton recordObs, viewRecords;
 	String userCondition;
 	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  setContentView(R.layout.activity_upload_images);
-       // Intent i = new Intent (HomeActivity.this, Upload_images.class);
-        //startActivity(i);
-        //finish();
-       
-       // Intent i = new Intent (HomeActivity.this, BrowsePictureActivity.class);
-       // startActivity(i);
-        //finish();
-       
-        //setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home);
         
         // Check if user is logged in
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
@@ -55,7 +46,7 @@ public class HomeActivity extends Activity {
         //Setting up the environment
 
         
-
+        viewRecords = (ImageButton) findViewById(R.id.imageButton2);
         logoutButton = (Button) findViewById(R.id.logoutButton);
         recordObs = (ImageButton) findViewById(R.id.imageButton1);
       
@@ -79,6 +70,18 @@ public class HomeActivity extends Activity {
 				editor.commit();
 				Intent goToLogin = new Intent(HomeActivity.this, LoginActivity.class);
 				startActivity(goToLogin);
+
+			}
+ 
+		});
+        
+     // Button click listener
+        viewRecords.setOnClickListener(new OnClickListener() {
+        	 
+			@Override
+			public void onClick(View view) {
+				Intent goToViewRecords = new Intent(HomeActivity.this, ViewRecordsActivity.class);
+				startActivity(goToViewRecords);
 				finish();
 				
 			}

@@ -29,14 +29,15 @@ public final class R {
         public static final int viewrecords=0x7f020004;
     }
     public static final class id {
-        public static final int Home=0x7f080026;
-        public static final int Logout=0x7f080027;
+        public static final int Home=0x7f080027;
+        public static final int Logout=0x7f080028;
         public static final int RadioButton01=0x7f080024;
-        public static final int action_settings=0x7f080025;
+        public static final int action_settings=0x7f080026;
         public static final int ageText=0x7f08001a;
         public static final int btn_img=0x7f080000;
         public static final int btn_upld=0x7f080001;
         public static final int button1=0x7f080009;
+        public static final int datePicker1=0x7f080025;
         public static final int editText1=0x7f08000a;
         public static final int editText2=0x7f080003;
         public static final int editText3=0x7f080004;
@@ -83,6 +84,8 @@ public final class R {
         public static final int activity_registration=0x7f030009;
         public static final int activity_upload_images=0x7f03000a;
         public static final int activity_user_profile=0x7f03000b;
+        public static final int activity_view_records=0x7f03000c;
+        public static final int activity_view_single_record=0x7f03000d;
     }
     public static final class menu {
         public static final int browse_picture=0x7f070000;
@@ -96,21 +99,23 @@ public final class R {
         public static final int registration=0x7f070008;
         public static final int upload_images=0x7f070009;
         public static final int user_profile_activity=0x7f07000a;
+        public static final int view__single__record=0x7f07000b;
+        public static final int view_records=0x7f07000c;
     }
     public static final class string {
         public static final int EnterEmail=0x7f050004;
         public static final int EnterName=0x7f050005;
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
-        public static final int bp_hint_lower=0x7f050011;
-        public static final int bp_hint_up=0x7f050010;
-        public static final int chl_hint=0x7f050015;
+        public static final int bp_hint_lower=0x7f050013;
+        public static final int bp_hint_up=0x7f050012;
+        public static final int chl_hint=0x7f050017;
         public static final int hello_world=0x7f050001;
-        public static final int hint_weight=0x7f05000f;
-        public static final int plserate_hint=0x7f050014;
-        public static final int resp_hint=0x7f050016;
-        public static final int sugar_hint=0x7f050012;
-        public static final int temp_val=0x7f05000e;
+        public static final int hint_weight=0x7f050011;
+        public static final int plserate_hint=0x7f050016;
+        public static final int resp_hint=0x7f050018;
+        public static final int sugar_hint=0x7f050014;
+        public static final int temp_val=0x7f050010;
         public static final int title_activity_browse_picture=0x7f05000c;
         public static final int title_activity_form_data=0x7f050007;
         public static final int title_activity_form_data_general=0x7f050009;
@@ -120,10 +125,12 @@ public final class R {
         public static final int title_activity_med__prescrip=0x7f05000a;
         public static final int title_activity_registration=0x7f050003;
         public static final int title_activity_upload_images=0x7f05000b;
-        public static final int title_gen=0x7f050017;
-        public static final int txt_btn=0x7f050013;
-        public static final int txt_select=0x7f050019;
-        public static final int upld_txt=0x7f050018;
+        public static final int title_activity_view__single__record=0x7f05000f;
+        public static final int title_activity_view_records=0x7f05000e;
+        public static final int title_gen=0x7f050019;
+        public static final int txt_btn=0x7f050015;
+        public static final int txt_select=0x7f05001b;
+        public static final int upld_txt=0x7f05001a;
     }
     public static final class style {
         /** 
