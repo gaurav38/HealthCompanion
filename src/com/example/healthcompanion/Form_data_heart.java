@@ -1,9 +1,11 @@
 package com.example.healthcompanion;
 
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ScrollView;
 
 public class Form_data_heart extends Activity {
 
@@ -11,6 +13,9 @@ public class Form_data_heart extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_form_data_heart);
+	    ScrollView sv = new ScrollView(this);
+	   sv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+
 	}
 
 	@Override

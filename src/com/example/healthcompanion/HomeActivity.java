@@ -6,6 +6,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 
 public class HomeActivity extends Activity {
@@ -17,6 +20,24 @@ public class HomeActivity extends Activity {
         
         //Settign up Firebase
         Firebase.setAndroidContext(this);
+        Button btn_general= (Button)findViewById(R.id.button1);
+        Button btn_heart= (Button)findViewById(R.id.button2);
+        Button btn_diabetes= (Button)findViewById(R.id.button3);
+        
+        
+        btn_general.setOnClickListener(new OnClickListener(){
+        	public void onClick (View v){
+        	setContentView(R.layout.activity_form_data_general);	
+        }});
+        btn_heart.setOnClickListener(new OnClickListener(){
+        	public void onClick (View v){
+        	setContentView(R.layout.activity_form_data_heart);	
+        }});
+        btn_diabetes.setOnClickListener(new OnClickListener(){
+        	public void onClick (View v){
+        	setContentView(R.layout.activity_form_data);	
+        }});
+        
     }
 
 
@@ -38,4 +59,7 @@ public class HomeActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }

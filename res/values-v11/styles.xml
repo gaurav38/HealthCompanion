@@ -16,5 +16,6 @@
     <string name="plserate_hint">Heart Rate</string>
     <string name="chl_hint">Cholestrol</string>
     <string name="resp_hint">Respiratory Rate</string>
+    <string name="title_gen">General</string>
 
 </resources>
