@@ -17,5 +17,7 @@
     <string name="chl_hint">Cholestrol</string>
     <string name="resp_hint">Respiratory Rate</string>
     <string name="title_gen">General</string>
+    <string name="upld_txt">Upload</string>
+    <string name="txt_select">Select Image</string>
 
 </resources>
