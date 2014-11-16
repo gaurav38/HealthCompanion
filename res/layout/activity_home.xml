@@ -25,13 +25,13 @@
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="7dp"
         android:layout_marginTop="40dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/ic_action" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -69,5 +69,13 @@
         android:layout_alignLeft="@+id/imageButton3"
         android:layout_marginBottom="33dp"
         android:src="@android:drawable/btn_star" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/imageButton1"
+        android:text="Symptoms" />
 
 </RelativeLayout>

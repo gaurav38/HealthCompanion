@@ -25,8 +25,9 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int RadioButton01=0x7f080020;
         public static final int RelativeLayout1=0x7f080007;
-        public static final int action_settings=0x7f08001c;
+        public static final int action_settings=0x7f080021;
         public static final int ageText=0x7f080017;
         public static final int button1=0x7f080006;
         public static final int editText1=0x7f080008;
@@ -46,8 +47,12 @@ public final class R {
         public static final int logoutButton=0x7f08000c;
         public static final int nameText=0x7f080018;
         public static final int passwordText=0x7f080013;
+        public static final int radio0=0x7f08001d;
+        public static final int radio1=0x7f08001e;
+        public static final int radio2=0x7f08001f;
         public static final int radioButton1=0x7f08001a;
         public static final int radioButton2=0x7f08001b;
+        public static final int radioGroup2=0x7f08001c;
         public static final int radioSex=0x7f080019;
         public static final int relativeLayout1=0x7f08000a;
         public static final int scrollView1=0x7f080000;
@@ -63,6 +68,7 @@ public final class R {
         public static final int activity_home=0x7f030004;
         public static final int activity_login=0x7f030005;
         public static final int activity_registration=0x7f030006;
+        public static final int activity_user_profile=0x7f030007;
     }
     public static final class menu {
         public static final int form_data=0x7f070000;

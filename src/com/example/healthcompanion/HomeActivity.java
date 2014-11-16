@@ -22,6 +22,7 @@ public class HomeActivity extends Activity {
 
 	Button logoutButton;
 	ImageButton recordObs;
+	String userCondition;
 	
 	
     @Override
@@ -38,6 +39,8 @@ public class HomeActivity extends Activity {
         	startActivity(goToLogin);
         	finish();
         }
+        
+        userCondition = pref.getString("userCondition", "Others");
         
         //Setting up the environment
         
@@ -75,9 +78,23 @@ public class HomeActivity extends Activity {
         	 
 			@Override
 			public void onClick(View view) {
-				Intent recordDataDiabetes = new Intent(HomeActivity.this, Form_data_diabetes.class);
-				startActivity(recordDataDiabetes);
-				
+				if(userCondition == "Heart Problem"){
+				Intent recordDataHeart = new Intent(HomeActivity.this, Form_data_heart.class);
+				startActivity(recordDataHeart);
+				}
+				else if(userCondition == "Diabetes"){
+					Intent recordDataDiabetes = new Intent(HomeActivity.this, Form_data_diabetes.class);
+					startActivity(recordDataDiabetes);
+				}
+				else if(userCondition == "Obesity"){
+					Intent recordDataObesity = new Intent(HomeActivity.this, Form_data_obesity.class);
+					startActivity(recordDataObesity);
+				}
+				else
+				{
+					Intent recordDataOthers = new Intent(HomeActivity.this, Form_data_general.class);
+					startActivity(recordDataOthers);
+				}
 				
 			}
  
