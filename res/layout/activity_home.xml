@@ -12,28 +12,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to firebase" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="19dp"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="58dp"
-        android:text="Send to FB" />
+        android:text="Welcome to Health Companion" />
 
     <Button
         android:id="@+id/logoutButton"
@@ -43,5 +22,52 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="23dp"
         android:text="Logout" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButton1"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/logoutButton" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton1"
+        android:layout_below="@+id/imageButton1"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="76dp"
+        android:src="@android:drawable/btn_star" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageButton2"
+        android:layout_alignTop="@+id/imageButton3"
+        android:layout_marginTop="12dp"
+        android:src="@android:drawable/btn_star" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/logoutButton"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_marginBottom="33dp"
+        android:src="@android:drawable/btn_star" />
 
 </RelativeLayout>

@@ -92,7 +92,7 @@ public class RegistrationActivity extends Activity {
 			    	Toast.makeText(getApplicationContext(), "Registration Successfull!", Toast.LENGTH_LONG).show();
 			        
 			    	SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-			    	Editor editor = pref.edit();
+			    	final Editor editor = pref.edit();
 			    	editor.putString("username", email);
 			    	editor.commit();
 			    	
@@ -112,6 +112,10 @@ public class RegistrationActivity extends Activity {
 			    	        healthcompFB.child("users").child(authData.getUid()).setValue(map);
 			    	        healthcompFB.child("users").child(authData.getUid()).child("Gender").setValue(sex);
 			    	        healthcompFB.child("users").child(authData.getUid()).child("age").setValue(age);
+			    	        
+			    	        //Setting up uid in shared preferences
+			    	        editor.putString("uid", authData.getUid());
+			    	        editor.commit();
 			    	    }
 			    	    @Override
 			    	    public void onAuthenticationError(FirebaseError firebaseError) {

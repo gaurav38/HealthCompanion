@@ -18,7 +18,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name" >
-             <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,15 +27,13 @@
         <activity
             android:name=".RegistrationActivity"
             android:label="@string/title_activity_registration" >
-           
         </activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
-        
         <activity
-            android:name=".Form_data"
+            android:name=".Form_data_diabetes"
             android:label="@string/title_activity_form_data" >
         </activity>
         <activity
@@ -46,7 +44,10 @@
             android:name=".Form_data_general"
             android:label="@string/title_activity_form_data_general" >
         </activity>
+        <activity
+            android:name=".Form_data_obesity"
+            android:label="@string/title_activity_form_data_obesity" >
+        </activity>
     </application>
 
 </manifest>
-

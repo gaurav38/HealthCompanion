@@ -14,13 +14,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 
 
 public class HomeActivity extends Activity {
 
-	Button myButton, logoutButton;
-	EditText myEditText;
+	Button logoutButton;
+	ImageButton recordObs;
+	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,10 @@ public class HomeActivity extends Activity {
         }
         
         //Setting up the environment
-        myButton = (Button) findViewById(R.id.button1);
+        
         logoutButton = (Button) findViewById(R.id.logoutButton);
-        myEditText = (EditText) findViewById(R.id.editText1);
+        recordObs = (ImageButton) findViewById(R.id.imageButton1);
+      
         
         //Settign up Firebase
         Firebase.setAndroidContext(this);
@@ -49,16 +52,8 @@ public class HomeActivity extends Activity {
         // Button click send data to firebase
         final Firebase healthcompFB = new Firebase("https://healthcompanion.firebaseio.com/");
         
-        // Button click listener
-        myButton.setOnClickListener(new OnClickListener() {
-        	 
-			@Override
-			public void onClick(View arg0) {
-				healthcompFB.child("data").push().setValue(myEditText.getText().toString());
-				myEditText.setText("");
-			}
- 
-		});
+        
+        
         
         // Button click listener
         logoutButton.setOnClickListener(new OnClickListener() {
@@ -70,6 +65,19 @@ public class HomeActivity extends Activity {
 				Intent goToLogin = new Intent(HomeActivity.this, LoginActivity.class);
 				startActivity(goToLogin);
 				finish();
+				
+			}
+ 
+		});
+        
+     // Button click listener
+        recordObs.setOnClickListener(new OnClickListener() {
+        	 
+			@Override
+			public void onClick(View view) {
+				Intent recordDataDiabetes = new Intent(HomeActivity.this, Form_data_diabetes.class);
+				startActivity(recordDataDiabetes);
+				
 				
 			}
  

@@ -73,6 +73,7 @@ public class LoginActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				email = emailText.getText().toString();
 				new ForgotPassword().execute();
 				
 			}
@@ -100,6 +101,10 @@ public class LoginActivity extends Activity {
 			    	Editor editor = pref.edit();
 			    	editor.putString("username", email);
 			    	editor.commit();
+			    	
+			    	 //Setting up uid in shared preferences
+	    	        editor.putString("uid", authData.getUid());
+	    	        editor.commit();
 			    	
 			    	//Navigating to home activity
 			    	Intent goHome = new Intent(LoginActivity.this, HomeActivity.class);
