@@ -43,13 +43,9 @@
         android:layout_marginTop="76dp"
         android:src="@android:drawable/btn_star" />
 
-<<<<<<< HEAD
-    <Button
-        android:id="@+id/upld_btn"
-=======
+
     <ImageButton
         android:id="@+id/imageButton4"
->>>>>>> master
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/imageButton2"
@@ -80,7 +76,7 @@
         android:layout_height="70dp"
         android:layout_above="@+id/imageButton3"
         android:layout_toLeftOf="@+id/logoutButton"
-        android:src="@drawable/viewRecords" />
+        android:src="@drawable/viewrecords" />
 
     <TextView
         android:id="@+id/textView3"

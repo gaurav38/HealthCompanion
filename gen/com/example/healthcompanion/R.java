@@ -26,159 +26,104 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
         public static final int ic_reports=0x7f020002;
         public static final int log=0x7f020003;
+        public static final int viewrecords=0x7f020004;
     }
     public static final class id {
-<<<<<<< HEAD
-        public static final int RelativeLayout1=0x7f080009;
-        public static final int action_settings=0x7f080019;
-        public static final int ageText=0x7f080013;
+        public static final int Home=0x7f080026;
+        public static final int Logout=0x7f080027;
+        public static final int RadioButton01=0x7f080024;
+        public static final int action_settings=0x7f080025;
+        public static final int ageText=0x7f08001a;
         public static final int btn_img=0x7f080000;
         public static final int btn_upld=0x7f080001;
+        public static final int button1=0x7f080009;
         public static final int editText1=0x7f08000a;
         public static final int editText2=0x7f080003;
         public static final int editText3=0x7f080004;
         public static final int editText4=0x7f080006;
         public static final int editText5=0x7f080007;
         public static final int editText6=0x7f08000b;
-        public static final int emailText=0x7f08000e;
-        public static final int forgotButton=0x7f080010;
+        public static final int emailText=0x7f080015;
+        public static final int forgotButton=0x7f080017;
         public static final int form_data=0x7f080005;
+        public static final int imageButton1=0x7f08000e;
+        public static final int imageButton2=0x7f080011;
+        public static final int imageButton3=0x7f08000f;
+        public static final int imageButton4=0x7f080010;
+        public static final int imageButton5=0x7f080012;
         public static final int logoutButton=0x7f08000d;
-        public static final int nameText=0x7f080014;
-        public static final int passwordText=0x7f08000f;
-        public static final int radioButton1=0x7f080016;
-        public static final int radioButton2=0x7f080017;
-        public static final int radioSex=0x7f080015;
+        public static final int nameText=0x7f08001b;
+        public static final int passwordText=0x7f080016;
+        public static final int radio0=0x7f080021;
+        public static final int radio1=0x7f080022;
+        public static final int radio2=0x7f080023;
+        public static final int radioButton1=0x7f08001d;
+        public static final int radioButton2=0x7f08001e;
+        public static final int radioGroup2=0x7f080020;
+        public static final int radioSex=0x7f08001c;
         public static final int scrollView1=0x7f080002;
-        public static final int select_btn=0x7f080018;
-        public static final int signUpButton=0x7f080012;
-        public static final int submitButton=0x7f080011;
+        public static final int select_btn=0x7f08001f;
+        public static final int signUpButton=0x7f080019;
+        public static final int submitButton=0x7f080018;
         public static final int textView1=0x7f08000c;
+        public static final int textView2=0x7f080013;
+        public static final int textView3=0x7f080014;
         public static final int upld_btn=0x7f080008;
     }
     public static final class layout {
         public static final int activity_browse_picture=0x7f030000;
         public static final int activity_form_data=0x7f030001;
-        public static final int activity_form_data_general=0x7f030002;
-        public static final int activity_form_data_heart=0x7f030003;
-        public static final int activity_home=0x7f030004;
-        public static final int activity_login=0x7f030005;
-        public static final int activity_med__prescrip=0x7f030006;
-        public static final int activity_registration=0x7f030007;
-        public static final int activity_upload_images=0x7f030008;
+        public static final int activity_form_data_diabetes=0x7f030002;
+        public static final int activity_form_data_general=0x7f030003;
+        public static final int activity_form_data_heart=0x7f030004;
+        public static final int activity_form_data_obesity=0x7f030005;
+        public static final int activity_home=0x7f030006;
+        public static final int activity_login=0x7f030007;
+        public static final int activity_med__prescrip=0x7f030008;
+        public static final int activity_registration=0x7f030009;
+        public static final int activity_upload_images=0x7f03000a;
+        public static final int activity_user_profile=0x7f03000b;
     }
     public static final class menu {
         public static final int browse_picture=0x7f070000;
         public static final int form_data=0x7f070001;
         public static final int form_data_general=0x7f070002;
         public static final int form_data_heart=0x7f070003;
-        public static final int home=0x7f070004;
-        public static final int login=0x7f070005;
-        public static final int med__prescrip=0x7f070006;
-        public static final int registration=0x7f070007;
-        public static final int upload_images=0x7f070008;
-=======
-        public static final int Home=0x7f080021;
-        public static final int Logout=0x7f080022;
-        public static final int RadioButton01=0x7f08001f;
-        public static final int action_settings=0x7f080020;
-        public static final int ageText=0x7f080016;
-        public static final int button1=0x7f080006;
-        public static final int editText1=0x7f080007;
-        public static final int editText2=0x7f080001;
-        public static final int editText3=0x7f080002;
-        public static final int editText4=0x7f080004;
-        public static final int editText5=0x7f080005;
-        public static final int editText6=0x7f080008;
-        public static final int emailText=0x7f080011;
-        public static final int forgotButton=0x7f080013;
-        public static final int form_data=0x7f080003;
-        public static final int imageButton1=0x7f08000b;
-        public static final int imageButton2=0x7f08000c;
-        public static final int imageButton3=0x7f08000d;
-        public static final int imageButton4=0x7f08000e;
-        public static final int imageButton5=0x7f08000f;
-        public static final int logoutButton=0x7f08000a;
-        public static final int nameText=0x7f080017;
-        public static final int passwordText=0x7f080012;
-        public static final int radio0=0x7f08001c;
-        public static final int radio1=0x7f08001d;
-        public static final int radio2=0x7f08001e;
-        public static final int radioButton1=0x7f080019;
-        public static final int radioButton2=0x7f08001a;
-        public static final int radioGroup2=0x7f08001b;
-        public static final int radioSex=0x7f080018;
-        public static final int scrollView1=0x7f080000;
-        public static final int signUpButton=0x7f080015;
-        public static final int submitButton=0x7f080014;
-        public static final int textView1=0x7f080009;
-        public static final int textView2=0x7f080010;
-    }
-    public static final class layout {
-        public static final int activity_form_data_diabetes=0x7f030000;
-        public static final int activity_form_data_general=0x7f030001;
-        public static final int activity_form_data_heart=0x7f030002;
-        public static final int activity_form_data_obesity=0x7f030003;
-        public static final int activity_home=0x7f030004;
-        public static final int activity_login=0x7f030005;
-        public static final int activity_registration=0x7f030006;
-        public static final int activity_user_profile=0x7f030007;
-    }
-    public static final class menu {
-        public static final int form_data=0x7f070000;
-        public static final int form_data_general=0x7f070001;
-        public static final int form_data_heart=0x7f070002;
-        public static final int form_data_obesity=0x7f070003;
-        public static final int home=0x7f070004;
-        public static final int login=0x7f070005;
-        public static final int registration=0x7f070006;
-        public static final int user_profile_activity=0x7f070007;
->>>>>>> master
+        public static final int form_data_obesity=0x7f070004;
+        public static final int home=0x7f070005;
+        public static final int login=0x7f070006;
+        public static final int med__prescrip=0x7f070007;
+        public static final int registration=0x7f070008;
+        public static final int upload_images=0x7f070009;
+        public static final int user_profile_activity=0x7f07000a;
     }
     public static final class string {
         public static final int EnterEmail=0x7f050004;
         public static final int EnterName=0x7f050005;
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
-<<<<<<< HEAD
-        public static final int bp_hint_lower=0x7f050010;
-        public static final int bp_hint_up=0x7f05000f;
-        public static final int chl_hint=0x7f050014;
+        public static final int bp_hint_lower=0x7f050011;
+        public static final int bp_hint_up=0x7f050010;
+        public static final int chl_hint=0x7f050015;
         public static final int hello_world=0x7f050001;
-        public static final int hint_weight=0x7f05000e;
-        public static final int plserate_hint=0x7f050013;
-        public static final int resp_hint=0x7f050015;
-        public static final int sugar_hint=0x7f050011;
-        public static final int temp_val=0x7f05000d;
+        public static final int hint_weight=0x7f05000f;
+        public static final int plserate_hint=0x7f050014;
+        public static final int resp_hint=0x7f050016;
+        public static final int sugar_hint=0x7f050012;
+        public static final int temp_val=0x7f05000e;
         public static final int title_activity_browse_picture=0x7f05000c;
-=======
-        public static final int bp_hint_lower=0x7f05000e;
-        public static final int bp_hint_up=0x7f05000d;
-        public static final int chl_hint=0x7f050012;
-        public static final int hello_world=0x7f050001;
-        public static final int hint_weight=0x7f05000c;
-        public static final int plserate_hint=0x7f050011;
-        public static final int resp_hint=0x7f050013;
-        public static final int sugar_hint=0x7f05000f;
-        public static final int temp_val=0x7f05000b;
->>>>>>> master
         public static final int title_activity_form_data=0x7f050007;
         public static final int title_activity_form_data_general=0x7f050009;
         public static final int title_activity_form_data_heart=0x7f050008;
-        public static final int title_activity_form_data_obesity=0x7f05000a;
+        public static final int title_activity_form_data_obesity=0x7f05000d;
         public static final int title_activity_login=0x7f050006;
         public static final int title_activity_med__prescrip=0x7f05000a;
         public static final int title_activity_registration=0x7f050003;
-<<<<<<< HEAD
         public static final int title_activity_upload_images=0x7f05000b;
-        public static final int title_gen=0x7f050016;
-        public static final int txt_btn=0x7f050012;
-        public static final int txt_select=0x7f050018;
-        public static final int upld_txt=0x7f050017;
-=======
-        public static final int title_gen=0x7f050014;
-        public static final int txt_btn=0x7f050010;
->>>>>>> master
+        public static final int title_gen=0x7f050017;
+        public static final int txt_btn=0x7f050013;
+        public static final int txt_select=0x7f050019;
+        public static final int upld_txt=0x7f050018;
     }
     public static final class style {
         /** 

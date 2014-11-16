@@ -45,8 +45,7 @@
             android:label="@string/title_activity_form_data_general" >
         </activity>
         <activity
-<<<<<<< HEAD
-            android:name=".Med_Prescrip"
+			android:name=".Med_Prescrip"
             android:label="@string/title_activity_med__prescrip" >
         </activity>
         <activity
@@ -56,14 +55,15 @@
         <activity
             android:name=".BrowsePictureActivity"
             android:label="@string/title_activity_browse_picture" >
-=======
+		</activity>
+		<activity
             android:name=".Form_data_obesity"
             android:label="@string/title_activity_form_data_obesity" >
         </activity>
         <activity
             android:name=".UserProfileActivity"
             android:label="User Profile Activity" >
->>>>>>> master
+
         </activity>
     </application>
 
